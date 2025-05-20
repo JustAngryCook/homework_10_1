@@ -8,5 +8,3 @@ def get_mask_account(number: int) -> str:
     """функция принимает номер счета и маскирует его"""
     numbers = str(number)
     return (f"**{numbers[-4:]}")
-
-
