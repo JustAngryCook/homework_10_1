@@ -1,4 +1,4 @@
-.flake8[project]
+[project]
 name = "bank-card-project"
 version = "0.1.0"
 description = ""
