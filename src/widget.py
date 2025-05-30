@@ -1,4 +1,4 @@
-from masks import get_mask_account, get_mask_card_number
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(string: str) -> str:
@@ -19,7 +19,3 @@ def mask_account_card(string: str) -> str:
 def get_date(datetime: str) -> str:
     """функция принимает строку с датой и временем и переводит в формат 'ДД.ММ.ГГГГ'"""
     return (f"{datetime[8:10]}.{datetime[5:7]}.{datetime[0:4]}")
-
-
-print(mask_account_card("Счет 64686473678894779589"))
-print(get_date("2024-03-11T02:26:18.671407"))
