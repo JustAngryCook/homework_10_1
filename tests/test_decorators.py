@@ -1,9 +1,8 @@
 from src.decorators import log
 
 
-
-
 def test_log_decorator_stdout(capsys):
+    """Тест декоратора log: проверка вывода в stdout при успешном выполнении функции"""
     @log()
     def test_func(a,b):
         return a + b

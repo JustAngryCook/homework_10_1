@@ -2,8 +2,8 @@ import datetime
 from calendar import error
 
 
-
 def log(filename=None):
+    """Функция-декоратор, логирующая результат и время выполнения функций"""
     def decorator(func):
         def wrapper(*args, **kwargs):
             try:
