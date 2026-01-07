@@ -1,4 +1,3 @@
-import pytest
 from unittest.mock import patch, MagicMock
 from src.external_api import convertation
 
@@ -26,4 +25,3 @@ def test_convertation_usd_success(mock_getenv, mock_get):
 
     result = convertation(transaction)
     assert result == 7550.0
-    

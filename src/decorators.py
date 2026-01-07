@@ -1,5 +1,4 @@
 import datetime
-from calendar import error
 
 
 def log(filename=None):
@@ -34,8 +33,10 @@ def log(filename=None):
         return wrapper
     return decorator
 
-@ log(filename="mylog.txt")
+
+@log(filename="mylog.txt")
 def slog(a, b):
     return a + b
 
-print(slog(5,4))
+
+print(slog(5, 4))

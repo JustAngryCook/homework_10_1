@@ -41,7 +41,6 @@ def load_transaction(json_file: str) -> list:
             utils_logger.info(f"Успешно загружено {len(data)} транзакций из {json_file}")
             return data
 
-
     except json.JSONDecodeError as e:
         utils_logger.error(f"Ошибка декодирования JSON: {e}")
         return []

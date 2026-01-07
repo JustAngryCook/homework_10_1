@@ -29,7 +29,7 @@ def get_mask_card_number(number: str) -> str:
             masks_logger.error(error_msg)
             raise ValueError(error_msg)
 
-        masks_logger.info(f"Номер карты успешно замаскирован")
+        masks_logger.info("Номер карты успешно замаскирован")
         return (f"{numbers[0:4]} {numbers[4:6]}** **** {numbers[12:]}")
 
     except Exception as e:
@@ -51,7 +51,7 @@ def get_mask_account(number: str) -> str:
             error_msg = f"Номер счета содержит нецифровые символы: {number}"
             masks_logger.error(error_msg)
             raise ValueError(error_msg)
-        masks_logger.info(f"Номер счета успешно замаскирован")
+        masks_logger.info("Номер счета успешно замаскирован")
         return (f"**{numbers[-4:]}")
 
     except Exception as e:
