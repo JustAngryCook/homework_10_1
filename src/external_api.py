@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+
 def convertation(transaction: dict) -> float:
     """Извлекает сумму из транзакции и возвращает как float, конвертирую в рубли"""
     try:

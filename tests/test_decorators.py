@@ -4,9 +4,9 @@ from src.decorators import log
 def test_log_decorator_stdout(capsys):
     """Тест декоратора log: проверка вывода в stdout при успешном выполнении функции"""
     @log()
-    def test_func(a,b):
+    def test_func(a, b):
         return a + b
-    result = test_func(2,3)
+    result = test_func(2, 3)
 
     assert result == 5
 
