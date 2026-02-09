@@ -1,4 +1,3 @@
-import csv
 import pandas as pd
 from typing import List, Dict, Any
 
@@ -6,7 +5,9 @@ from typing import List, Dict, Any
 def read_transactions(path: str) -> List[Dict[str, Any]]:
     """Чтение CSV с помощью pandas"""
     try:
-        df = pd.read_csv(path, encoding='utf-8')
+        df = pd.read_csv(path, encoding='utf-8', delimiter=';', skip_blank_lines=True)
+
+        df = df.dropna(how='all')
 
         # Конвертация в список словарей
         transactions = df.to_dict('records')

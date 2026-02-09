@@ -1,13 +1,17 @@
 def filter_by_currency(list_of_dict: list, currency: str) -> list:
-    """Функция сортировки по заданной валюте транзакции"""
-    for i in list_of_dict:
-        for x, y in i.items():
-            if x == "operationAmount":
-                for z, m in y.items():
-                    if z == "currency":
-                        for j, o in m.items():
-                            if o == currency and j == "code":
-                                yield i
+    """Функция фильтрации транзакций по заданной валюте"""
+    for transaction in list_of_dict:
+        # Проверяем CSV формат (плоская структура)
+        if 'currency_code' in transaction:
+            if transaction['currency_code'] == currency:
+                yield transaction
+        # Проверяем JSON формат (вложенная структура)
+        elif 'operationAmount' in transaction:
+            try:
+                if transaction['operationAmount']['currency']['code'] == currency:
+                    yield transaction
+            except (KeyError, TypeError):
+                continue
 
 
 def transaction_descriptions(list_of_dict: list) -> str:
